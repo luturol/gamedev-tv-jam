@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   groundCheck: {fileID: 228441141}
-  jumpForce: 17
+  jumpForce: 8
 --- !u!1 &472998138
 GameObject:
   m_ObjectHideFlags: 0
