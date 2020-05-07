@@ -26,9 +26,26 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         Move();
         Jump();
+    }
+
+    /// <summary>
+    /// Sent when another object enters a trigger collider attached to this
+    /// object (2D physics only).
+    /// </summary>
+    /// <param name="other">The other Collider2D involved in this collision.</param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if(other.gameObject.tag == "Ground")
+        {
+            onGround = true;
+        }
+        else{
+            onGround = false;
+        }
     }
 
     // inverter o sprite baseado na scale 
@@ -60,8 +77,9 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && onGround)
         {
+            onGround = false;
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
     }
