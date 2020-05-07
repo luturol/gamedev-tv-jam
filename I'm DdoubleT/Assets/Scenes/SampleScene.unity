@@ -161,6 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 287038384}
   - component: {fileID: 287038385}
+  - component: {fileID: 287038386}
   m_Layer: 0
   m_Name: player_colliders
   m_TagString: Untagged
@@ -195,7 +196,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0022069216, y: -0.022731185}
+  m_Offset: {x: -0.071980596, y: 0.07362306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -206,8 +207,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5232003, y: 0.83426356}
+  m_Size: {x: 0.38365293, y: 0.6415551}
   m_EdgeRadius: 0
+--- !u!58 &287038386
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287038383}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.033225477, y: -0.2757722}
+  serializedVersion: 2
+  m_Radius: 0.15777594
 --- !u!1 &450536006
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +236,7 @@ GameObject:
   - component: {fileID: 450536008}
   - component: {fileID: 450536007}
   - component: {fileID: 450536009}
+  - component: {fileID: 450536010}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -264,29 +282,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!114 &450536009
-MonoBehaviour:
-=======
 --- !u!95 &450536009
 Animator:
   serializedVersion: 3
->>>>>>> 1893ce48dbb105c55947c821b2d720ef616c2e0f
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450536006}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7ce8bc299ca93541a783a0d0ee01ebd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  groundCheck: {fileID: 228441141}
-  jumpForce: 8
-=======
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 17cd1251566e2d842bdc26b332eb9a90, type: 2}
   m_CullingMode: 0
@@ -297,7 +301,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
->>>>>>> 1893ce48dbb105c55947c821b2d720ef616c2e0f
+--- !u!114 &450536010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450536006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ce8bc299ca93541a783a0d0ee01ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  groundCheck: {fileID: 1513000702}
+  jumpForce: 5
 --- !u!1 &472998138
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +510,7 @@ GameObject:
   - component: {fileID: 1513000707}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2008,7 +2026,7 @@ GameObject:
   - component: {fileID: 1979288151}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

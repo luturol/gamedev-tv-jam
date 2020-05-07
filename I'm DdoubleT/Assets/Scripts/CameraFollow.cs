@@ -18,6 +18,12 @@ public class CameraFollow : MonoBehaviour
         Vector3 cameraTemp = transform.position;
         cameraTemp.x = playerTransform.position.x;
         
+        if(playerTransform.position.y > 0 || playerTransform.position.y < 0)
+        {            
+            cameraTemp.y = playerTransform.position.y;
+        }
+            
+
         transform.position = cameraTemp;
     }
 }
