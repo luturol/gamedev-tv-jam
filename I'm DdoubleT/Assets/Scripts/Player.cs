@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     private bool canMove = false;
     private Vector2 direction;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,15 +56,19 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        direction.x = Input.GetAxisRaw("Horizontal");
+        // Vector 3 aceita a motion gradativa de x
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 
-        if (direction.x != 0 && canMove && isOnGround)
+        // essa combinação transforma o movimento no que chamam de movimento smooth
+        transform.position += movement * Time.deltaTime * speed;
+
+        if (movement.x != 0 && canMove && isOnGround)
         {
             canMove = true;
             animator.SetBool("canRun", canMove);
-            if (direction.x > 0 && !facingRight)
+            if (movement.x > 0 && !facingRight)
                 Flip();
-            else if (direction.x < 0 && facingRight)
+            else if (movement.x < 0 && facingRight)
                 Flip();
         }
         else
@@ -91,8 +94,6 @@ public class Player : MonoBehaviour
             isOnGround = true;
             canMove = true;
         } 
-
-
     }
 
     /// <summary>
