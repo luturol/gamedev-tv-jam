@@ -30,8 +30,9 @@ public class BaseAgentScript : MonoBehaviour
             Flip();
         }
         else {
-            print("oi");
-            Invoke("TurnOffGameObject", 0.1f);
+            Invoke("TurnOffGameObject", 0.8f);
+
+            anim.Play("Enemy_Die");
         }
     }
 
